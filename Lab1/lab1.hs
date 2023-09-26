@@ -152,7 +152,7 @@ toDigits2 base x = toDigitsHelper base x []
 addDigitWise base xs ys = toDigits2 base (fromDigits base xs + fromDigits base ys)
 
 
--- delannoyPaths
+-- delannoyPaths, delannoyPaths2
 delannoyPaths 0 0 = [[]]
 delannoyPaths 0 n = [replicate' n 0]
 delannoyPaths m 0 = [replicate' m 2]
