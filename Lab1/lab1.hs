@@ -159,13 +159,13 @@ delannoyPaths m 0 = [replicate' m 2]
 delannoyPaths m n = map (++ [2]) (delannoyPaths (m - 1) n) ++ map (++ [0]) (delannoyPaths m (n - 1)) ++ map (++ [1]) (delannoyPaths (m - 1) (n - 1))
 
 
--- delannoyPaths2 a b = delPathsHelper a b 0 0 [[[]]] [[[]]] [[]]
+delannoyPaths2 a b = delPathsHelper a b 0 0 [[[]]] [[[]]] [[]]
 
--- delPathsHelper a b m n prevCol curCol prev
---  | m == a && n == b  = map (++ [2]) prev ++ map (++ [0]) prevCol!!(m) ++ map (++ [1]) prevCol!!(m - 1)
---  | m == 0 && n == 0  = delannoyHelper a b (m + 1) n [[[]]] [[[]]] [[]]
---  | m == 0            = delannoyHelper a b (m + 1) n curCol [map (++ [0]) curCol!!m] (map (++ [0]) curCol!!m)
---  | n == 0 && m == a  = delannoyHelper a b 0 (n + 1) prevCol (curCol ++ [map (++ [2]) prev]) (map (++ [2]) prev)
---  | n == 0            = delannoyHelper a b (m + 1) n prevCol (curCol ++ [map (++ [2]) prev]) (map (++ [2]) prev)
---  | m == a            = let cur = (map (++ [2]) prev ++ map (++ [0]) prevCol!!(m) ++ map (++ [1]) prevCol!!(m - 1)) in delannoyHelper a b 0 (n + 1) prevCol (curCol ++ [cur]) cur 
---  | otherwise         = let cur = (map (++ [2]) prev ++ map (++ [0]) prevCol!!(m) ++ map (++ [1]) prevCol!!(m - 1)) in delannoyHelper a b (m + 1) n prevCol (curCol ++ [cur]) cur
+delPathsHelper a b m n prevCol curCol prev
+ | m == a && n == b  = (map (++ [2]) prev) ++ (map (++ [0]) (prevCol!!(m))) ++ (map (++ [1]) (prevCol!!(m - 1)))
+ | m == 0 && n == 0  = delPathsHelper a b (m + 1) n [[[]]] [[[]]] [[]]
+ | m == 0            = delPathsHelper a b (m + 1) n curCol [map (++ [0]) (curCol!!m)] (map (++ [0]) (curCol!!m))
+ | n == 0 && m == a  = delPathsHelper a b 0 (n + 1) prevCol (curCol ++ [map (++ [2]) prev]) (map (++ [2]) prev)
+ | n == 0            = delPathsHelper a b (m + 1) n prevCol (curCol ++ [map (++ [2]) prev]) (map (++ [2]) prev)
+ | m == a            = let cur = (map (++ [2]) prev ++ map (++ [0]) (prevCol!!(m)) ++ map (++ [1]) (prevCol!!(m - 1))) in delPathsHelper a b 0 (n + 1) prevCol (curCol ++ [cur]) cur 
+ | otherwise         = let cur = (map (++ [2]) prev ++ map (++ [0]) (prevCol!!(m)) ++ map (++ [1]) (prevCol!!(m - 1))) in delPathsHelper a b (m + 1) n prevCol (curCol ++ [cur]) cur
