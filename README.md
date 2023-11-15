@@ -7,3 +7,4 @@
 2. [Lab2](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab2) - задачи на свёртку, развёртку, бинарное дерево, алгебраические выражения, стековую машину
 3. [Lab3](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab3) - задачи на неподвижные точки
 4. [Lab4](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab4) - задачи о классах типов и функторах
+5. [Lab5](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab5) - задача о выражениях с использованием экзистенциальных типов
