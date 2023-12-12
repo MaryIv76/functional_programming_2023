@@ -8,3 +8,4 @@
 3. [Lab3](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab3) - задачи на неподвижные точки
 4. [Lab4](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab4) - задачи о классах типов и функторах
 5. [Lab5](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab5) - задача о выражениях с использованием экзистенциальных типов
+6. [Lab6](https://github.com/MaryIv76/functional_programming_2023/tree/main/Lab6) - интеграция транслятора арифметических выражений и стековой ВМ
